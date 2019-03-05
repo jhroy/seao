@@ -1,7 +1,6 @@
 # ©2018 Jean-Hugues Roy. GNU GPL v3.
 # coding: utf-8
 
-###
 ### Ce premier script extrait les informations des fichiers XML
 
 import csv, os, glob
@@ -10,12 +9,19 @@ from bs4 import BeautifulSoup
 
 donnees = "contrats.csv"
 
+# On commence par aller chercher tous les fichiers du SÉAO sur le portail des données ouvertes du gouvernement:
+# https://www.donneesquebec.ca/recherche/fr/dataset/systeme-electronique-dappel-doffres-seao
+# On obtient une série de répertoires contenant différents fichiers .xml
+
 for dossier in os.walk("."):
-	# print(dossier[0],len(dossier[2]))
 	for fichier in dossier[2]:
 		if ".xml" in fichier:
 			nom = "{}/{}".format(dossier[0],fichier)
 			print(nom,fichier[:4])
+			
+# Il y a trois grands types de fichiers: des avis publics, des contrats et des dépenses.
+# Le code qui suit est donc essentiellement trois conditions qui vérifient à quel type de fichier on a affaire
+# et qui extraient les informations que contiennent ce fichier
 
 			if fichier[:4] == "Avis":
 				bs = BeautifulSoup(open(nom),"xml")
@@ -24,7 +30,6 @@ for dossier in os.walk("."):
 				print(len(tousAvis))
 
 				for avis in tousAvis:
-					# print(avis.organisme.text)
 					fournisseurs = avis.find("fournisseurs").find_all("fournisseur")
 					x = 0
 					for fournisseur in fournisseurs:
@@ -47,14 +52,6 @@ for dossier in os.walk("."):
 								annee = ""
 								mois = ""
 								jour = ""
-							# dateFerm = avis.datefermeture.text
-
-							# try:
-							# 	dateFin = datetime.strptime(dateFerm,"%Y-%m-%d %H:%M")
-							# 	diff = (dateDebut - dateFin)
-							# except:
-							# 	dateFin = ""
-							# 	diff = ""
 
 							categorie = avis.categorieseao.text
 							fournisseurNom = fournisseur.nomorganisation.text
