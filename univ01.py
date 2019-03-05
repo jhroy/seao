@@ -7,7 +7,7 @@ import csv, os, glob
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 
-donnees = "contrats.csv"
+donnees = "seao_2009-2018.csv"
 
 # On commence par aller chercher tous les fichiers du SÉAO sur le portail des données ouvertes du gouvernement:
 # https://www.donneesquebec.ca/recherche/fr/dataset/systeme-electronique-dappel-doffres-seao
