@@ -1,5 +1,7 @@
-# seao
+![](https://www.seao.ca/images/logo_seao2.png)
+
 Extraction des infos contenues dans les fichiers .xml du Système électronique d'appels d'offres (SÉAO) du gouvernement du Québec
+-----
 
 ### Étape 1
 
