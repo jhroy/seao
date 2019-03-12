@@ -117,4 +117,4 @@ order by total desc;
 
 Je donne un exemple avec les cégeps et universités parce que ce travail d'analyse a été réalisé pour [*Découvrir*](https://www.acfas.ca/publications/decouvrir), la revue en ligne de l'Acfas, dans le cadre d'un dossier sur le coûts des licences logicielles et des abonnements à des revues académiques pour le système d'éducation supérieure québécois. À paraître bientôt.
 
-Si vous souhaitez plonger dans les données de votre côté, le fichier [**contrats_univ_cegeps_2009-2018.csv**](contrats_univ_cegeps_2009-2018.csv) contient les quelque 38nbsp;771 contrats octroyés par les cégeps et universités du Québec entre 2009 et 2018.
+Si vous souhaitez plonger dans les données de votre côté, le fichier [**contrats_univ_cegeps_2009-2018.csv**](contrats_univ_cegeps_2009-2018.csv) contient les quelque 38&nbsp;771 contrats octroyés par les cégeps et universités du Québec entre 2009 et 2018.
